@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/klorenz/pic2svg/issues"
   },
-  "homepage": "https://github.com/klorenz/pic2svg#readme"
+  "homepage": "https://github.com/klorenz/pic2svg#readme",
+  "dependencies": {
+    "tempfile": "^1.1.1"
+  }
 }

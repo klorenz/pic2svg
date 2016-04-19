@@ -1,4 +1,6 @@
 child = require('child_process');
+tempfile = require('tempfile');
+fs = require('fs');
 
 function spawnSync(program, argv, opts, error) {
   var result = child.spawnSync(program, argv, opts);
@@ -25,6 +27,7 @@ function spawnSync(program, argv, opts, error) {
 }
 
 function pic2svg(content, data) {
+  var data = data || {};
 
   // fonts at http://infohost.nmt.edu/tcc/soft/plotutils/plotutils_10.html#SEC67
   var pic_font = "Helvetica";
@@ -35,6 +38,8 @@ function pic2svg(content, data) {
   if (!content.match(/^\.PS/)) {
      content = ".PS\n"+content+"\n.PE\n";
   }
+
+  console.log("content", content)
 
   /* pic2plot also can produce svg, but with an ugly white border and background
      rect.  For beeing able to crop away the white border, go via ps and pdf */
@@ -78,7 +83,7 @@ module.exports = {
 }
 
 if (require.main === module) {
-  var content;
+  var content = '';
   process.stdin.on('data', function(chunk) {
     content += chunk.toString();
   });
