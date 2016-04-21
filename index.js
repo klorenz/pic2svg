@@ -69,7 +69,7 @@ function pic2svg(content, data) {
     prolog: 'pdf2svg not found.  Install pdf2svg tool.'
   });
 
-  result = fs.readFileSync(svgfile);
+  result = fs.readFileSync(svgfile).toString();
 
   fs.unlinkSync(pdfcropped);
   fs.unlinkSync(svgfile);
