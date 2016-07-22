@@ -17,7 +17,8 @@
     "markdown"
   ],
   "bin": {
-    "pic2svg": "./index.js"
+    "pic2svg": "./index.js",
+    "pic2svg-install-tools": "./install.js"
   },
   "author": "Kay-Uwe (Kiwi) Lorenz <kiwi@franka.dyndns.org>",
   "license": "ISC",

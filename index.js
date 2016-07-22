@@ -58,7 +58,7 @@ function pic2svg(content, data) {
   });
 
   var pdfcropped = tempfile(".pdf");
-  result = spawnSync("pdfcrop", ["-margins", "2 2 2 2", "-", pdfcropped], {
+  result = spawnSync(path.resolve(__dirname, "vendor", "pdfcrop_v0.4b", "pdfcrop"), ["-margins", "2 2 2 2", "-", pdfcropped], {
     input: result.stdout
   }, {
     prolog: "pdfcrop not found.  Install pdfcrop.pl."
